@@ -1,0 +1,100 @@
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\ApplicationInsights.config
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\WebCommercial.dll.config
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\WebCommercial.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\WebCommercial.pdb
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Antlr3.Runtime.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.Agent.Intercept.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.DependencyCollector.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.Web.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.WindowsServer.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.ApplicationInsights.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.Web.Infrastructure.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Newtonsoft.Json.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Helpers.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Mvc.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Optimization.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Razor.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.WebPages.Deployment.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.WebPages.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.WebPages.Razor.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\WebGrease.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Helpers.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Mvc.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Optimization.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.Razor.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.WebPages.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.WebPages.Deployment.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\System.Web.WebPages.Razor.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Antlr3.Runtime.pdb
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Newtonsoft.Json.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.ApplicationInsights.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.DependencyCollector.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.WindowsServer.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\Microsoft.AI.Web.xml
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\fr\System.Web.Helpers.resources.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\fr\System.Web.Mvc.resources.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\fr\System.Web.Optimization.resources.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\fr\System.Web.Razor.resources.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\fr\System.Web.WebPages.resources.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\obj\Debug\WebCommercial.csprojResolveAssemblyReference.cache
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\obj\Debug\WebCommercial.csproj.CoreCompileInputs.cache
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\obj\Debug\WebCommercial.dll
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\obj\Debug\WebCommercial.pdb
+D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\MySql.Data.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\ApplicationInsights.config
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebCommercial.dll.config
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebCommercial.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebCommercial.pdb
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Antlr3.Runtime.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.Web.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.ApplicationInsights.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\MySql.Data.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Newtonsoft.Json.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Helpers.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Mvc.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Optimization.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Razor.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.WebPages.Deployment.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.WebPages.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.WebPages.Razor.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebGrease.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Helpers.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Mvc.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Optimization.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.Razor.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.WebPages.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.WebPages.Deployment.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\System.Web.WebPages.Razor.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Antlr3.Runtime.pdb
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Newtonsoft.Json.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.ApplicationInsights.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Microsoft.AI.Web.xml
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\fr\System.Web.Razor.resources.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\WebCommercial.csprojResolveAssemblyReference.cache
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\WebCommercial.csproj.CoreCompileInputs.cache
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\WebCommercial.dll
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\WebCommercial.pdb

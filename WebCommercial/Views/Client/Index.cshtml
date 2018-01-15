@@ -1,0 +1,64 @@
+﻿
+@model IEnumerable<WebCommercial.Models.Metier.Clientel>
+
+@{
+    ViewBag.Title = "Liste des clients";
+    Layout = "~/Views/Shared/_LayoutCommercial.cshtml";
+}
+@if (Model != null)
+{
+    <div class="container">
+        <div class="col-md-8 col-sm-8">
+            <div class="blanc">
+                <h1>Liste des clients </h1>
+            </div>
+
+            <table class="table table-bordered table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th> N° client</th>
+                        <th> N° société</th>
+                        <th> Nom </th>
+                        <th>Prénom </th>
+                        <th>Adresse </th>
+                        <th>Ville</th>
+                        <th>Code postal</th>
+                        <th style="width:80px">Modifier</th>
+                        <th style="width:80px">Supprimer</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.NoClient)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Societe)</td>
+                        <td> @Html.DisplayFor(modelItem => item.NomCl) </td>
+
+                        <td>@Html.DisplayFor(modelItem => item.PrenomCl)</td>
+                        <td> @Html.DisplayFor(modelItem => item.AdresseCl) </td>
+
+                        <td>@Html.DisplayFor(modelItem => item.CodePostCl)</td>
+                        <td>@Html.DisplayFor(modelItem => item.VilleCl) </td>
+                        <td style="text-align:center;">
+                            <span>
+                                @Html.ActionLink("  ", "Modifier", "Client", new { id = item.NoClient }, new { @class = "btn btn-default btn-primary glyphicon glyphicon glyphicon-pencil" })
+                            </span>
+                        </td>
+                        <td style="text-align:center;">
+                            <span>
+                                @Html.ActionLink("  ", "Supprimer", "Client", new { id = item.NoClient }, new { @class = "btn btn-default btn-primary glyphicon glyphicon glyphicon-remove" })
+                            </span>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                    @Html.ActionLink("Ajouter des clients", "Ajout", "Client", new { @class = "btn btn-default btn-primary" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
