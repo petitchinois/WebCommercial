@@ -19,18 +19,16 @@
                     <div class='col-sm-6'>
                         <div class="form-group">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
+                                <input type='date' class="form-control" name="datedebut" />
+                                @Html.TextBox("debut", null, new { Name="debut", @type = "date" })
+                                
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker1').datetimepicker();
-                        });
-                    </script>
+                   
                 </div>
             </div>
 
@@ -39,18 +37,15 @@
                     <div class='col-sm-6'>
                         <div class="form-group">
                             <div class='input-group date' id='datetimepicker2'>
-                                <input type='text' class="form-control" />
+                                @Html.TextBox("fin", null, new { Name="fin", @type = "date" })
+                                
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker2').datetimepicker();
-                        });
-                    </script>
+                   
                 </div>
             </div>
 
@@ -67,8 +62,10 @@
                         <th style="width:80px">Supprimer</th>
                     </tr>
                 </thead>
+               
                 @foreach (var item in Model)
-        {
+                {
+                    
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.NoCommande)</td>
                 <td>@Html.DisplayFor(modelItem => item.NoVendeur)</td>

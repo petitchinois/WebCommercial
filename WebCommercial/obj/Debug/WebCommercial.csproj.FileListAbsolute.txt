@@ -49,7 +49,6 @@ D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\obj\Debug\We
 D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\obj\Debug\WebCommercial.pdb
 D:\epul\isi cours 1ere anne\cours c#\tp\WebCommercial\WebCommercial\bin\MySql.Data.dll
 C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\ApplicationInsights.config
-C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebCommercial.dll.config
 C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebCommercial.dll
 C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebCommercial.pdb
 C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\Antlr3.Runtime.dll
@@ -98,3 +97,4 @@ C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\
 C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\WebCommercial.csproj.CoreCompileInputs.cache
 C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\WebCommercial.dll
 C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\obj\Debug\WebCommercial.pdb
+C:\Users\maxim\Documents\Polytech\ISI\TPs\WebCommercial\WebCommercial\bin\WebCommercial.dll.config

@@ -27,5 +27,36 @@ namespace WebCommercial.Controllers
 
             return View(comms);
         }
+
+        public ActionResult Modifier(string id)
+        {
+            try
+            {
+                Commandes uneCde = Commandes.getCommande(id);
+                return View(uneCde);
+            }
+            catch (MonException e)
+            {
+                return HttpNotFound();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Modifier(Commandes uneCde)
+        {
+            try
+            {
+                
+
+                Commandes.updateCommande(uneCde);
+                return View();
+            }
+            catch (MonException e)
+            {
+                return HttpNotFound();
+            }
+        }
+
+        
     }
 }

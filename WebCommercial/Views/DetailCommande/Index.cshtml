@@ -1,0 +1,44 @@
+﻿
+@model IEnumerable<WebCommercial.Models.Metier.DetailCommande>
+
+@{
+    ViewBag.Title = "Details des commandes";
+    Layout = "~/Views/Shared/_LayoutCommercial.cshtml";
+}
+@if (Model != null)
+{
+    <div class="container">
+        <div class="col-md-8 col-sm-8">
+            <div class="blanc">
+                <h1>Liste des clients </h1>
+            </div>
+
+            <table class="table table-bordered table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th> N° commande</th>
+                        <th> N° article</th>
+                        <th> Quantité commandée </th>
+                        <th> Livrée </th>
+                        
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.NoCommand)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NoArticle)</td>
+                        <td> @Html.DisplayFor(modelItem => item.QteCdee) </td>
+
+                        <td>@Html.DisplayFor(modelItem => item.Livree)</td>
+                        
+                       
+                    </tr>
+                }
+
+            </table>
+           
+
+        </div>
+    </div>
+}

@@ -58,5 +58,18 @@ namespace WebApplication1.Controllers
                 return HttpNotFound();
             }
         }
+
+        public ActionResult Ajout(Clientel unC)
+        {
+            try
+            {
+                Clientel.addClient(unC);
+                return View();
+
+            }catch(MonException e)
+            {
+                return HttpNotFound();
+            }
+        }
     }
 }

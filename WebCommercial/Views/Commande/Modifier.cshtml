@@ -1,0 +1,79 @@
+﻿
+
+
+@model  WebCommercial.Models.Metier.Commandes
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+@{
+    ViewBag.Title = "Modifier";
+    Layout = "~/Views/Shared/_LayoutCommercial.cshtml";
+}
+
+<h2>Modifier une commande</h2>
+
+@if (Model != null)
+{
+
+    using (Html.BeginForm())
+    {
+@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Commande</h4>
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.NoCommande, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NoCommande, new { htmlAttributes = new { @class = "form-control", @disabled = "" } })
+            @Html.ValidationMessageFor(model => model.NoCommande, "", new { @class = "text-danger" })
+            <input name="NoCommande" type="HIDDEN" value=@(@Model.NoCommande) id="NoCommande" />
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">NoVendeur</label>
+        <div class="col-md-10">
+            <input name="NoVendeur" type="text" class="form-control" value=@(@Model.NoVendeur) id="NoVendeur" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">NoClient</label>
+        <div class="col-md-10">
+            <input name="NoClient" type="text" class="form-control" value=@(@Model.NoClient) id="NoClient" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">DateCde</label>
+        <div class="col-md-10">
+            <input name="DateCde" type="text" class="form-control" value=@(@Model.DateCde) id="DateCde" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Facture</label>
+        <div class="col-md-10">
+            <input name="Facture" type="text" class="form-control" value=@(@Model.Facture) id="Facture" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Enregistrer" class="btn btn-primary" /> 
+
+        </div>
+    </div>
+        
+</div>
+ 
+
+    }
+}
+
+
+

@@ -107,7 +107,7 @@ namespace WebCommercial.Models.Metier
 
                 mysql = "SELECT NO_VENDEUR, NO_CLIENT, DATE_CDE,";
                 mysql += "FACTURE ";
-                mysql += "FROM commandes WHERE NO_CLIENT='" + numCo + "'";
+                mysql += "FROM commandes WHERE NO_COMMAND='" + numCo + "'";
                 dt = DBInterface.Lecture(mysql, er);
 
                 if (dt.IsInitialized && dt.Rows.Count > 0)
@@ -115,8 +115,8 @@ namespace WebCommercial.Models.Metier
                     Commandes comm = new Commandes();
                     DataRow dataRow = dt.Rows[0];
                     comm.NoCommande = numCo;
-                    comm.NoVendeur = dataRow[1].ToString();
-                    comm.NoClient = dataRow[0].ToString();
+                    comm.NoVendeur = dataRow[0].ToString();
+                    comm.NoClient = dataRow[1].ToString();
                     comm.DateCde = dataRow[2].ToString();
                     comm.Facture = dataRow[3].ToString();
 
@@ -172,11 +172,18 @@ namespace WebCommercial.Models.Metier
 
         public static void updateCommande(Commandes unCli)
         {
+
+            String[] date = unCli.DateCde.Split('.');
+            String jour = date[0];
+            String mois = date[1];
+            String anne = date[2];
+            String dateFinale = anne + '-' + mois + '-' + jour;
+
             Serreurs er = new Serreurs("Erreur sur l'écriture d'une commande.", "Client.update()");
             String requete = "UPDATE Commandes SET " +
                                   "NO_VENDEUR = '" + unCli.NoVendeur + "'" +
                                   ", NO_CLIENT = '" + unCli.NoClient + "'" +
-                                  ", DATE_CDE = '" + unCli.DateCde + "'" +
+                                  ", DATE_CDE = '" + dateFinale + "'" +
                                   ", FACTURE = '" + unCli.Facture + "'" +
                                   " WHERE NO_COMMAND LIKE '" + unCli.NoCommande + "'";
             try
@@ -193,5 +200,6 @@ namespace WebCommercial.Models.Metier
             }
 
         }
+       
     }
 }
