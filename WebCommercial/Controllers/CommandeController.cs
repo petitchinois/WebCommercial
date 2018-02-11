@@ -61,15 +61,20 @@ namespace WebCommercial.Controllers
         {
             try
             {
-                //gerer la dropdown list de client
+                //dropdown list de client
                 List<String> noClientList = new List<String>();
                 noClientList = (Clientel.LectureNoClient());
                 ViewBag.ListOfNoClient = noClientList;
 
-                //gerer la dropdown list de Vendeur
+                //dropdown list de Vendeur
                 List<String> noVendeurList = new List<String>();
                 noVendeurList = (Vendeur.LectureNoVendeur());
                 ViewBag.ListOfNoVendeur = noVendeurList;
+
+                //dropdown list des articles
+                List<String> noArticleList = new List<String>();
+                noArticleList = (Commandes.LectureNoArticle());
+                ViewBag.ListOfNoArticle = noArticleList;
 
                 return View("");
             }
@@ -82,13 +87,13 @@ namespace WebCommercial.Controllers
 
 
         [HttpPost]
-        public ActionResult Ajouter(String noVendeur, String noClient, String noCommande, String dateCde, String Facture)
+        public ActionResult Ajouter(String noVendeur, String noClient, String noCommande, String dateCde, String Facture, String noArticle, String qteCdee, String livree)
         {
             try
             {
                
 
-                Commandes uneCde = new Commandes(noCommande, noClient, noVendeur, dateCde, Facture);
+                Commandes uneCde = new Commandes(noCommande, noClient, noVendeur, dateCde, Facture, noArticle, qteCdee, livree);
                 Commandes.addCommande(uneCde);
                 
 
@@ -115,7 +120,45 @@ namespace WebCommercial.Controllers
                 ModelState.AddModelError("Erreur", "Erreur lors de la récupération des commandes : " + e.Message);
                 return View("Error");
             }
+        }
 
+        public ActionResult AjouterDetail()
+        {
+            try
+            {
+                //gerer la dropdown list de client
+                List<String> noClientList = new List<String>();
+                noClientList = (Clientel.LectureNoClient());
+                ViewBag.ListOfNoClient = noClientList;
+
+                //gerer la dropdown list de Vendeur
+                List<String> noVendeurList = new List<String>();
+                noVendeurList = (Vendeur.LectureNoVendeur());
+                ViewBag.ListOfNoVendeur = noVendeurList;
+
+                return View("");
+            }
+            catch (MonException e)
+            {
+                return HttpNotFound();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult AjouterDetail(string noCommande, string noArticle, string qteCdee, string livree)
+        {
+            Commandes uneCde = new Commandes(noCommande, noArticle, qteCdee, livree);
+            try
+            {
+                Commandes.addDetailCommande(uneCde);
+
+                return RedirectToAction("Detail", "Commande");
+            }
+            catch (MonException e)
+            {
+                ModelState.AddModelError("Erreur", "Erreur lors de la récupération des commandes : " + e.Message);
+                return View("Error");
+            }
         }
 
 		public ActionResult Supprimer(string id)

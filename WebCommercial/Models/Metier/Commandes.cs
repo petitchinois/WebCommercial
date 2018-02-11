@@ -114,13 +114,48 @@ namespace WebCommercial.Models.Metier
 
     }
 
-        public Commandes(string no, string ve, string cl, string date, string fact)
+        public Commandes(string no, string ve, string cl, string date, string fact, string noA, string qte, string liv)
         {
             noCommande = no;
             noVendeur = ve;
             noClient = cl;
             dateCde = date;
             facture = fact;
+            NoArticle = noA;
+            qteCdee = qte;
+            livree = liv;
+        }
+
+        public Commandes(string no, string noA, string qte, string liv)
+        {
+            noCommande = no;
+            NoArticle = noA;
+            qteCdee = qte;
+            livree = liv;
+        }
+
+        public static List<String> LectureNoArticle()
+        {
+            List<String> mesNumeros = new List<String>();
+            DataTable dt;
+            Serreurs er = new Serreurs("Erreur sur lecture de la commande.", "Client.LectureNoClient()");
+            try
+            {
+
+                String mysql = "SELECT DISTINCT NO_ARTICLE FROM articles ORDER BY NO_ARTICLE";
+                dt = DBInterface.Lecture(mysql, er);
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    mesNumeros.Add((dataRow[0]).ToString());
+                }
+
+                return mesNumeros;
+            }
+            catch (MySqlException e)
+            {
+                throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+            }
         }
 
         public static List<String> LectureNoCommande()
@@ -257,7 +292,29 @@ namespace WebCommercial.Models.Metier
 
         }
 
+        public static void addDetailCommande(Commandes uneCde)
+        {
+            Serreurs er = new Serreurs("Erreur sur l'écriture d'une commande.", "Commandes.add()");
+            String requete = "INSERT INTO detail_cde (NO_COMMAND, NO_ARTICLE, QTE_CDEE, LIVREE) Values (" +
+                                  "'" + uneCde.NoCommande + "'" +
+                                  ", '" + uneCde.NoArticle + "'" +
+                                  ", '" + uneCde.QteCdee + "'" +
+                                  ", '" + uneCde.Livree + "');";
 
+            try
+            {
+                DBInterface.Insertion_Donnees(requete);
+            }
+            catch (MonException erreur)
+            {
+                throw erreur;
+            }
+            catch (MySqlException e)
+            {
+                throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+            }
+        }
+        
 
         public static void addCommande(Commandes uneCde)
         {
@@ -273,7 +330,12 @@ namespace WebCommercial.Models.Metier
                                   ",'" + uneCde.NoVendeur + "'" +
                                   ",'" + uneCde.NoClient + "'" +
                                   ",'" + uneCde.DateCde + "'" +
-                                  ",'" + uneCde.Facture + "')";
+                                  ",'" + uneCde.Facture + "'); \n" +
+                                  "INSERT INTO detail_cde (NO_COMMAND, NO_ARTICLE, QTE_CDEE, LIVREE) Values (" +
+                                  "'" + uneCde.NoCommande + "'" +
+                                  ", '"+ uneCde.NoArticle + "'" +
+                                  ", '"+uneCde.QteCdee + "'" +
+                                  ", '"+uneCde.Livree+"');";
             try
             {
                 DBInterface.Insertion_Donnees(requete);
