@@ -1,0 +1,67 @@
+﻿
+@model IEnumerable<WebCommercial.Models.Metier.Vendeur>
+
+@{
+    ViewBag.Title = "Liste des vendeurs";
+    Layout = "~/Views/Shared/_LayoutCommercial.cshtml";
+}
+@if (Model != null)
+{
+    <div class="container">
+        <div class="col-md-8 col-sm-8">
+            <div class="blanc">
+                <h1>Liste des vendeurs </h1>
+            </div>
+
+            <table class="table table-bordered table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th> N° vendeur</th>
+                        <th> N° Chef équipe de vente</th>
+                        <th> Nom vendeur </th>
+                        <th>Prénom vendeur</th>
+                        <th>Date d'embauche </th>
+                        <th>Ville</th>
+                        <th>Salaire vendeur</th>
+                        <th>Commission</th>
+                        <th style="width:80px"></th>
+                        <th style="width:80px"></th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.NoVendeur)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NoVendChefEq)</td>
+                    <td> @Html.DisplayFor(modelItem => item.NomVend) </td>
+
+                    <td>@Html.DisplayFor(modelItem => item.PrenomVend)</td>
+                    <td> @Html.DisplayFor(modelItem => item.DateEmbau) </td>
+
+                    <td>@Html.DisplayFor(modelItem => item.VilleVend)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SalaireVend) </td>
+                    <td>@Html.DisplayFor(modelItem => item.Commission) </td>
+
+                    <td style="text-align:center;">
+                        <span>
+                            @Html.ActionLink("  ", "Modifier", "Vendeur", new { id = item.NoVendeur }, new { @class = "btn btn-default btn-primary glyphicon glyphicon glyphicon-pencil" })
+                        </span>
+                    </td>
+                    <td style="text-align:center;">
+                        <span>
+                            @Html.ActionLink("  ", "Supprimer", "Vendeur", new { id = item.NoVendeur }, new { @class = "btn btn-default btn-primary glyphicon glyphicon glyphicon-remove" })
+                        </span>
+                    </td>
+                </tr>
+                }
+
+            </table>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6">
+                    @Html.ActionLink("Ajouter des vendeurs", "Ajouter", "Vendeur", new { @class = "btn btn-default btn-primary" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+}

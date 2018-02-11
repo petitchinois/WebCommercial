@@ -57,6 +57,68 @@ namespace WebCommercial.Controllers
             }
         }
 
-        
+        public ActionResult Ajouter()
+        {
+            try
+            {
+                //gerer la dropdown list de client
+                List<String> noClientList = new List<String>();
+                noClientList = (Clientel.LectureNoClient());
+                ViewBag.ListOfNoClient = noClientList;
+
+                //gerer la dropdown list de Vendeur
+                List<String> noVendeurList = new List<String>();
+                noVendeurList = (Vendeur.LectureNoVendeur());
+                ViewBag.ListOfNoVendeur = noVendeurList;
+
+                return View("");
+            }
+            catch (MonException e)
+            {
+                return HttpNotFound();
+            }
+        }
+
+
+
+        [HttpPost]
+        public ActionResult Ajouter(String noVendeur, String noClient, String noCommande, String dateCde, String Facture)
+        {
+            try
+            {
+               
+
+                Commandes uneCde = new Commandes(noCommande, noClient, noVendeur, dateCde, Facture);
+                Commandes.addCommande(uneCde);
+                
+
+                return RedirectToAction("Index", "Commande");
+            }
+            catch (MonException e)
+            {
+                return HttpNotFound();
+            }
+        }
+
+        public ActionResult Detail(string id)
+        {
+            IEnumerable<Commandes> uneCde = null;
+
+            try
+            {
+                uneCde = Commandes.getListeDeCommande(id);
+
+                return View(uneCde);
+            }
+            catch (MonException e)
+            {
+                ModelState.AddModelError("Erreur", "Erreur lors de la récupération des commandes : " + e.Message);
+                return View("Error");
+            }
+        }
+
+
+
+
     }
 }

@@ -236,13 +236,14 @@ namespace WebCommercial.Models.Metier
         {
             Serreurs er = new Serreurs("Erreur sur l'écriture d'un client.", "Client.update()");
             String requete = "INSERT INTO Clientel (SOCIETE, NOM_CL, PRENOM_CL, ADRESSE_CL, VILLE_CL, CODE_POST_CL, NO_CLIENT) " +
-                                  "VALUES ("+unCli.Societe + ", " 
-                                  + unCli.NomCl + ", " 
-                                  + unCli.PrenomCl + ", " 
-                                  + unCli.AdresseCl + ", "
-                                  + unCli.VilleCl + ", " 
-                                   + unCli.CodePostCl + ", " 
-                                  + unCli.NoClient + ") ";
+                                  "VALUES ("+
+                                  "'"+unCli.Societe + "' , '" 
+                                  + unCli.NomCl + "' , '" 
+                                  + unCli.PrenomCl + "' , '" 
+                                  + unCli.AdresseCl + "' , '"
+                                  + unCli.VilleCl + "' , '" 
+                                   + unCli.CodePostCl + "' , '" 
+                                  + unCli.NoClient + "') ";
             try
             {
                 DBInterface.Insertion_Donnees(requete);

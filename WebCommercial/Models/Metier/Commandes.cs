@@ -17,6 +17,16 @@ namespace WebCommercial.Models.Metier
         private String dateCde;
         private String facture;
 
+        /*Attributs des details_cde et articles */
+        private String noArticle;
+        private String qteCdee;
+        private String livree;
+
+        private String libArticle;
+        private String prixArt;
+        private String prixTotal;
+        private String prixFinal;
+
 
         public String NoCommande
         {
@@ -47,6 +57,43 @@ namespace WebCommercial.Models.Metier
             set { facture = value; }
         }
 
+        public String NoArticle
+        {
+            get { return noArticle; }
+            set { noArticle = value; }
+        }
+        public String QteCdee
+        {
+            get { return qteCdee; }
+            set { qteCdee = value; }
+        }
+
+        public String Livree
+        {
+            get { return livree; }
+            set { livree = value; }
+        }
+        public String LibArticle
+        {
+            get { return libArticle; }
+            set { libArticle = value; }
+        }
+        public String PrixArt
+        {
+            get { return prixArt; }
+            set { prixArt = value; }
+        }
+        public String PrixTotal
+        {
+            get { return prixTotal; }
+            set { prixTotal = value; }
+        }
+        public String PrixFinal
+        {
+            get { return prixFinal; }
+            set { prixFinal = value; }
+        }
+
         //initialisation 
         public Commandes()
         {
@@ -56,7 +103,16 @@ namespace WebCommercial.Models.Metier
             dateCde = "";
             facture = "";
 
-        }
+            noArticle="";
+            qteCdee="";
+            livree="";
+
+            libArticle="";
+            prixArt="";
+            prixTotal="";
+            prixFinal="";
+
+    }
 
         public Commandes(string no, string ve, string cl, string date, string fact)
         {
@@ -101,7 +157,7 @@ namespace WebCommercial.Models.Metier
 
             String mysql;
             DataTable dt;
-            Serreurs er = new Serreurs("Erreur sur recherche d'une commande.", "Client.RechercheUnClient()");
+            Serreurs er = new Serreurs("Erreur sur recherche d'une commande.", "Commande.RechercheUnClient()");
             try
             {
 
@@ -137,7 +193,7 @@ namespace WebCommercial.Models.Metier
             IEnumerable<Commandes> comms = new List<Commandes>();
             DataTable dt;
             Commandes comm;
-            Serreurs er = new Serreurs("Erreur sur lecture des commandes.", "ClientsList.getClients()");
+            Serreurs er = new Serreurs("Erreur sur lecture des commandes.", "CommandesList.getCommands()");
             try
             {
                 String mysql = "SELECT NO_VENDEUR, NO_CLIENT, DATE_CDE, FACTURE, " +
@@ -176,10 +232,10 @@ namespace WebCommercial.Models.Metier
             String[] date = unCli.DateCde.Split('.');
             String jour = date[0];
             String mois = date[1];
-            String anne = date[2];
-            String dateFinale = anne + '-' + mois + '-' + jour;
+            String annee = date[2];
+            String dateFinale = annee + '-' + mois + '-' + jour;
 
-            Serreurs er = new Serreurs("Erreur sur l'écriture d'une commande.", "Client.update()");
+            Serreurs er = new Serreurs("Erreur sur l'écriture d'une commande.", "Commande.update()");
             String requete = "UPDATE Commandes SET " +
                                   "NO_VENDEUR = '" + unCli.NoVendeur + "'" +
                                   ", NO_CLIENT = '" + unCli.NoClient + "'" +
@@ -200,6 +256,77 @@ namespace WebCommercial.Models.Metier
             }
 
         }
-       
+
+
+
+        public static void addCommande(Commandes uneCde)
+        {
+            String[] date = uneCde.DateCde.Split('.');
+            String jour = date[0];
+            String mois = date[1];
+            String annee = date[2];
+            String dateFinale = annee + '-' + mois + '-' + jour;
+
+            Serreurs er = new Serreurs("Erreur sur l'écriture d'une commande.", "Commandes.add()");
+            String requete = "INSERT INTO Commandes (NO_COMMAND,NO_VENDEUR,NO_CLIENT,DATE_CDE,FACTURE) Values (" +
+                                  "'" + uneCde.NoCommande + "'" +
+                                  ",'" + uneCde.NoVendeur + "'" +
+                                  ",'" + uneCde.NoClient + "'" +
+                                  ",'" + dateFinale + "'" +
+                                  ",'" + uneCde.Facture + "')";
+            try
+            {
+                DBInterface.Insertion_Donnees(requete);
+            }
+            catch (MonException erreur)
+            {
+                throw erreur;
+            }
+            catch (MySqlException e)
+            {
+                throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+            }
+
+        }
+
+        public static IEnumerable<Commandes> getListeDeCommande(String id)
+        {
+            IEnumerable<Commandes> uneCde = new List<Commandes>();
+            Commandes commande;
+            DataTable dt;
+            Serreurs er = new Serreurs("Erreur sur recherche d'une commande.", "Commande.RechercheUneCommande()");
+
+            try
+            {
+
+                String mysql = "SELECT NO_ARTICLE, LIB_ARTICLE, QTE_CDEE, PRIX_ART, QTE_CDEE * PRIX_ART AS PRIX_TOT " +
+                              "FROM detail_cde NATURAL JOIN articles WHERE NO_COMMAND='" + id + "'";
+                dt = DBInterface.Lecture(mysql, er);
+                double price = 0;
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    commande = new Commandes();
+                    commande.NoArticle = dataRow[0].ToString();
+                    commande.LibArticle = dataRow[1].ToString();
+                    commande.QteCdee = dataRow[2].ToString();
+                    commande.PrixArt = dataRow[3].ToString();
+                    commande.PrixTotal = dataRow[4].ToString();
+                    price = Convert.ToDouble(dataRow[4].ToString()) + price;
+                    /*MAJ DU PRIX*/
+                    commande.PrixFinal = Convert.ToString(price);
+
+                    ((List<Commandes>)uneCde).Add(commande);
+                }
+
+                return uneCde;
+
+            }
+            catch (MySqlException e)
+            {
+                throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+            }
+
+        }
+
     }
 }

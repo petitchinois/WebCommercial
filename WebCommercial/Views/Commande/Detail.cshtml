@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebCommercial.Models.Metier.Commandes>
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutCommercial.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-8 col-sm-8">
+        <div class="blanc">
+            <h1>Détails de la commande</h1>
+        </div>
+
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>N° Article</th>
+                    <th>Nom Article</th>
+                    <th>Prix Unitaire</th>
+                    <th>Quantité Commandée</th>
+                    <th>Sous-Total</th>
+                </tr>
+            </thead>
+            @{
+                double Tot = 0;
+
+                foreach (var uneCde in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => uneCde.NoArticle) </td>
+                        <td>@Html.DisplayFor(modelItem => uneCde.LibArticle)</td>
+                        <td>@Html.DisplayFor(modelItem => uneCde.PrixArt) €</td>
+                        <td>@Html.DisplayFor(modelItem => uneCde.QteCdee)</td>
+                        <td>@Html.DisplayFor(modelItem => uneCde.PrixTotal) €</td>
+
+                        @{Tot = Tot + Convert.ToDouble(uneCde.PrixTotal);}
+                    </tr>
+                }
+               
+                <tr>
+                    <th>Total HT</th>
+                    <td colspan="4" style="text-align:right">@Tot€</td>
+
+                </tr>
+            }
+            <hr />
+
+        </table>
+    </div>
+</div>

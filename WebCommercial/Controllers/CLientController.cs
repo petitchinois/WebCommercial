@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using WebCommercial.Models.Metier;
 using WebCommercial.Models.MesExceptions;
 
-namespace WebApplication1.Controllers
+namespace WebCommercial.Controllers
 {
     public class ClientController : Controller
     {
@@ -59,14 +59,28 @@ namespace WebApplication1.Controllers
             }
         }
 
-        public ActionResult Ajout(Clientel unC)
+        public ActionResult Ajouter()
         {
             try
             {
-                Clientel.addClient(unC);
                 return View();
+            }
+            catch (MonException e)
+            {
+                return HttpNotFound();
+            }
+        }
 
-            }catch(MonException e)
+        [HttpPost]
+        public ActionResult Ajouter(Clientel unClient)
+        {
+            try
+            {
+                Clientel.addClient(unClient);
+                return RedirectToAction("Index", "Client");
+
+            }
+            catch(MonException e)
             {
                 return HttpNotFound();
             }

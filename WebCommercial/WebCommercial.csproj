@@ -148,8 +148,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CLientController.cs" />
     <Compile Include="Controllers\CommandeController.cs" />
-    <Compile Include="Controllers\DetailCommandeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VendeurController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,7 +157,7 @@
     <Compile Include="Models\MesExceptions\Serreurs.cs" />
     <Compile Include="Models\Metier\Clientel.cs" />
     <Compile Include="Models\Metier\Commandes.cs" />
-    <Compile Include="Models\Metier\DetailCommande.cs" />
+    <Compile Include="Models\Metier\Vendeur.cs" />
     <Compile Include="Models\Persistance\Connexion.cs" />
     <Compile Include="Models\Persistance\DBInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,9 +204,10 @@
     <Content Include="Views\Client\Modifier.cshtml" />
     <Content Include="Views\Commande\Index.cshtml" />
     <Content Include="Views\Commande\Modifier.cshtml" />
-    <None Include="Views\Client\Ajout.cshtml" />
-    <Content Include="Views\Commande\Ajout.cshtml" />
-    <Content Include="Views\DetailCommande\Index.cshtml" />
+    <None Include="Views\Client\Ajouter.cshtml" />
+    <Content Include="Views\Commande\Ajouter.cshtml" />
+    <Content Include="Views\Commande\Detail.cshtml" />
+    <Content Include="Views\Vendeur\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
