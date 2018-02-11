@@ -1,0 +1,88 @@
+﻿@model WebCommercial.Models.Metier.Clientel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Supprimer</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Clientel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Societe)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Societe)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NomCl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NomCl)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NoClient)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NoClient)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PrenomCl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PrenomCl)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AdresseCl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AdresseCl)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.VilleCl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.VilleCl)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CodePostCl)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CodePostCl)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

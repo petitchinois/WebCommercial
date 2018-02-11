@@ -85,5 +85,18 @@ namespace WebCommercial.Controllers
                 return HttpNotFound();
             }
         }
+
+        public ActionResult Supprimer(string id)
+        {
+            Clientel client = Clientel.getClient(id);
+            return View(client);
+        }
+
+        [HttpPost]
+        public ActionResult Supprimer(Clientel unCli)
+        {
+            Clientel.Supprimer(unCli);
+            return RedirectToAction("Index");
+        }
     }
 }

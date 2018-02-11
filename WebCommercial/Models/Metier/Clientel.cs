@@ -258,5 +258,42 @@ namespace WebCommercial.Models.Metier
             }
 
         }
+
+        public static void Supprimer(Clientel unCli)
+        {
+            SuppCom(unCli.NoClient);
+            Serreurs er = new Serreurs("Erreur sur la suppression d'un client.", "Clientel.Supprimer()");
+            String requete = "DELETE FROM Clientel WHERE NO_CLIENT='" + unCli.NoClient + "'";
+            try
+            {
+                DBInterface.Insertion_Donnees(requete);
+            }
+            catch (MonException erreur)
+            {
+                throw erreur;
+            }
+            catch (MySqlException e)
+            {
+                throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+            }
+        }
+
+        public static void SuppCom(string numClient)
+        {
+            Serreurs er = new Serreurs("Erreur sur la suppression d'un client.", "Clientel.Supprimer()");
+            String requete = "DELETE FROM Commandes WHERE NO_CLIENT='" + numClient + "'";
+            try
+            {
+                DBInterface.Insertion_Donnees(requete);
+            }
+            catch (MonException erreur)
+            {
+                throw erreur;
+            }
+            catch (MySqlException e)
+            {
+                throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+            }
+        }
     }
 }
