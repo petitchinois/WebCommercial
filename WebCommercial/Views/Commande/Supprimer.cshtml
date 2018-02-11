@@ -1,0 +1,119 @@
+﻿@model WebCommercial.Models.Metier.Commandes
+
+@{
+	ViewBag.Title = "Liste des commandes";
+	Layout = "~/Views/Shared/_LayoutCommercial.cshtml";
+}
+<h3>Etes vous sûr ?</h3>
+<div>
+	<h4>Commandes</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.NoCommande)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.NoCommande)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.NoVendeur)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.NoVendeur)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.NoClient)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.NoClient)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.DateCde)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.DateCde)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Facture)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Facture)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.NoArticle)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.NoArticle)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.QteCdee)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.QteCdee)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Livree)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Livree)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LibArticle)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LibArticle)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.PrixArt)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.PrixArt)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.PrixTotal)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.PrixTotal)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.PrixFinal)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.PrixFinal)
+		</dd>
+
+	</dl>
+
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="Supprimer" class="btn btn-default" /> |
+			@Html.ActionLink("Retour", "Index",null,new { @class = "btn btn-default btn-primary" })
+		</div>
+	}
+</div>

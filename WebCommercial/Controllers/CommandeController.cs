@@ -115,10 +115,21 @@ namespace WebCommercial.Controllers
                 ModelState.AddModelError("Erreur", "Erreur lors de la récupération des commandes : " + e.Message);
                 return View("Error");
             }
+
         }
 
+		public ActionResult Supprimer(string id)
+		{
+			Commandes commandes = Commandes.getCommande(id);
+			return View(commandes);
+		}
 
-
+		[HttpPost]
+		public ActionResult Supprimer(Commandes uneCde)
+		{
+			Commandes.Supprimer(uneCde);
+			return RedirectToAction("Index");
+		}
 
     }
 }

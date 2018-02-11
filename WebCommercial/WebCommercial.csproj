@@ -208,6 +208,7 @@
     <Content Include="Views\Commande\Ajouter.cshtml" />
     <Content Include="Views\Commande\Detail.cshtml" />
     <Content Include="Views\Vendeur\Index.cshtml" />
+    <Content Include="Views\Commande\Supprimer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -261,18 +261,18 @@ namespace WebCommercial.Models.Metier
 
         public static void addCommande(Commandes uneCde)
         {
-            String[] date = uneCde.DateCde.Split('.');
+            /*String[] date = uneCde.DateCde.ToString().Split('-');
             String jour = date[0];
             String mois = date[1];
             String annee = date[2];
-            String dateFinale = annee + '-' + mois + '-' + jour;
+            String dateFinale = annee + '-' + mois + '-' + jour;*/
 
             Serreurs er = new Serreurs("Erreur sur l'écriture d'une commande.", "Commandes.add()");
             String requete = "INSERT INTO Commandes (NO_COMMAND,NO_VENDEUR,NO_CLIENT,DATE_CDE,FACTURE) Values (" +
                                   "'" + uneCde.NoCommande + "'" +
                                   ",'" + uneCde.NoVendeur + "'" +
                                   ",'" + uneCde.NoClient + "'" +
-                                  ",'" + dateFinale + "'" +
+                                  ",'" + uneCde.DateCde + "'" +
                                   ",'" + uneCde.Facture + "')";
             try
             {
@@ -327,6 +327,45 @@ namespace WebCommercial.Models.Metier
             }
 
         }
+
+		public static void Supprimer(Commandes uneCde)
+		{
+			SuppDetail(uneCde);
+			Serreurs er = new Serreurs("Erreur sur la suppression d'une commande.", "Commandes.Supprimer()");
+			String requete = "DELETE FROM Commandes WHERE NO_COMMAND='" + uneCde.NoCommande + "'";
+			Console.WriteLine(requete);
+			try
+			{
+				DBInterface.Insertion_Donnees(requete);
+			}
+			catch (MonException erreur)
+			{
+				throw erreur;
+			}
+			catch (MySqlException e)
+			{
+				throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+			}
+		}
+
+		public static void SuppDetail(Commandes uneCde)
+		{
+			Serreurs er = new Serreurs("Erreur sur la suppression d'une commande.", "Commandes.Supprimer()");
+			String requete = "DELETE FROM detail_cde WHERE NO_COMMAND='" + uneCde.NoCommande + "'";
+			Console.WriteLine(requete);
+			try
+			{
+				DBInterface.Insertion_Donnees(requete);
+			}
+			catch (MonException erreur)
+			{
+				throw erreur;
+			}
+			catch (MySqlException e)
+			{
+				throw new MonException(er.MessageUtilisateur(), er.MessageApplication(), e.Message);
+			}
+		}
 
     }
 }
